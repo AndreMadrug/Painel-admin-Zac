@@ -1,0 +1,33 @@
+/* Cores e fontes do painel — documento de requisitos, seção 7 (identidade visual). */
+:root {
+  /* Paleta oficial do painel */
+  --petroleo-escuro: #124f5c; /* títulos, menu lateral, cabeçalho de tabela */
+  --petroleo: #1f8196; /* navegação, links e botão principal */
+  --verde: #17a673; /* sucesso, aprovação e confirmação */
+  --coral: #e8795a; /* alertas, prazos vencendo, ações de atenção */
+  --fundo: #f5f9f8; /* fundo das telas */
+  --branco: #ffffff;
+
+  /* Versões um pouco mais escuras, usadas quando há TEXTO BRANCO por cima
+     (garantem contraste mínimo de 4,5:1, como pede a identidade visual do zac). */
+  --petroleo-botao: #1b7488;
+  --verde-botao: #0e8559;
+  --coral-botao: #c24a2a;
+
+  /* Tons claros para fundos de avisos e selos */
+  --petroleo-claro: #e1f0f3;
+  --verde-claro: #ddf3ea;
+  --coral-claro: #fbe4dd;
+
+  --texto: #124f5c;
+  --texto-suave: #4b6b73;
+  --borda: #d5e2e5;
+  --borda-forte: #b7cdd2;
+
+  --raio: 12px;
+  --raio-pequeno: 8px;
+  --sombra: 0 1px 2px rgba(18, 79, 92, 0.06), 0 4px 14px rgba(18, 79, 92, 0.06);
+
+  --fonte-titulo: 'Poppins', system-ui, 'Segoe UI', Arial, sans-serif;
+  --fonte-texto: system-ui, 'Segoe UI', Roboto, Arial, sans-serif;
+}
