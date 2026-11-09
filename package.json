@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "test": "vitest run --passWithNoTests"
+    "test": "vitest run --passWithNoTests",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.4",
@@ -26,5 +27,14 @@
   "dependencies": {
     "chart.js": "^4.6.1",
     "leaflet": "^1.9.4"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{html,css,json,md}": [
+      "prettier --write"
+    ]
   }
 }
