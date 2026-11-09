@@ -147,3 +147,11 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Zac painel
+dist/
+.vercel/
+.env
+.env.*
+!.env.example
+.DS_Store
