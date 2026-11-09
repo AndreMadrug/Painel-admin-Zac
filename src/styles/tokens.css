@@ -1,0 +1,17 @@
+:root {
+  /* Cores do Zac (documento de requisitos, seção 7) */
+  --zac-petroleo-escuro: #124f5c;
+  --zac-petroleo: #1f8196;
+  --zac-verde: #17a673;
+  --zac-coral: #e8795a;
+  --zac-fundo: #f5f9f8;
+  --zac-branco: #ffffff;
+
+  /* Tipografia */
+  --font-titulo: 'Poppins', system-ui, sans-serif;
+  --font-texto: system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Forma */
+  --raio: 12px;
+  --borda: 1px solid #d5e3e3;
+}
