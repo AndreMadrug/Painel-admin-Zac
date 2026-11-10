@@ -1,0 +1,209 @@
+/* Esqueleto de todas as telas: menu lateral + cabeçalho + área da página. */
+.shell {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+
+/* ---------- Menu lateral ---------- */
+.menu {
+  background: var(--petroleo-escuro);
+  color: var(--branco);
+  padding: 20px 14px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.menu__marca {
+  display: block;
+  background: var(--branco);
+  border-radius: var(--raio);
+  padding: 10px 14px;
+  margin-bottom: 6px;
+}
+.menu__marca img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.menu__sub {
+  display: block;
+  margin: 8px 6px 18px;
+  font-family: var(--fonte-titulo);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: #bfe0e7;
+}
+
+.menu__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.menu__item {
+  display: block;
+  padding: 10px 14px;
+  border-radius: var(--raio-pequeno);
+  border-left: 4px solid transparent;
+  color: var(--branco);
+  text-decoration: none;
+  font-family: var(--fonte-titulo);
+  font-size: 0.9rem;
+}
+.menu__item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.menu__item--ativo {
+  background: var(--petroleo);
+  border-left-color: var(--coral);
+  font-weight: 600;
+}
+.menu :focus-visible {
+  outline-color: var(--branco);
+}
+
+/* ---------- Cabeçalho ---------- */
+.shell__conteudo {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 28px;
+  background: var(--petroleo-claro);
+  border-bottom: 1px solid var(--borda);
+}
+
+.cabecalho__menu {
+  display: none;
+  background: var(--branco);
+  border: 1px solid var(--borda-forte);
+  border-radius: var(--raio-pequeno);
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.trilha {
+  flex: 1;
+  min-width: 0;
+}
+.trilha ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  font-size: 0.88rem;
+}
+.trilha li + li::before {
+  content: '/';
+  margin-right: 8px;
+  color: var(--texto-suave);
+}
+.trilha a {
+  color: var(--petroleo);
+}
+.trilha [aria-current='page'] {
+  color: var(--texto);
+  font-weight: 600;
+}
+
+.cabecalho__usuario {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--petroleo);
+  color: var(--branco);
+  display: grid;
+  place-items: center;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.cabecalho__nome {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.link-sair {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: var(--coral-botao);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ---------- Área da página ---------- */
+.pagina {
+  padding: 28px;
+  display: grid;
+  gap: 22px;
+  align-content: start;
+  max-width: 1280px;
+  width: 100%;
+}
+.pagina:focus {
+  outline: none;
+}
+
+.pagina__topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+}
+.pagina__subtitulo {
+  color: var(--texto-suave);
+  margin-top: 4px;
+}
+
+/* ---------- Tablet e telas menores ---------- */
+@media (max-width: 960px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+  .menu {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 260px;
+    z-index: 20;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+  }
+  .menu--aberto {
+    transform: none;
+    box-shadow: 0 0 0 100vmax rgba(18, 79, 92, 0.45);
+  }
+  .cabecalho__menu {
+    display: block;
+  }
+  .cabecalho {
+    padding: 12px 16px;
+  }
+  .pagina {
+    padding: 20px 16px;
+  }
+}
