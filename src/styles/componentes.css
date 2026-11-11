@@ -643,6 +643,29 @@
   outline: 3px solid #124f5c;
   outline-offset: 2px;
 }
+.linha-tempo {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 18px;
+  border-left: 2px solid var(--cor-borda, #d5e3e6);
+}
+.linha-tempo li {
+  position: relative;
+  padding: 0 0 16px 12px;
+}
+.linha-tempo li::before {
+  content: '';
+  position: absolute;
+  left: -25px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1f8196;
+}
+.linha-tempo li:last-child {
+  padding-bottom: 0;
+}
 
 /* ---------- Pequenos ajustes ---------- */
 .prazo-urgente {
@@ -655,4 +678,3 @@
 .cartao h2:not(:first-child) {
   margin-top: 16px;
 }
-

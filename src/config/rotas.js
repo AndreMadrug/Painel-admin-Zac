@@ -16,6 +16,9 @@ import { paginaDisputaDetalhe } from '../pages/disputas/disputaDetalhe.js';
 import { paginaUsuariosVendedores } from '../pages/usuarios-vendedores/usuariosVendedores.js';
 import { paginaUsuarioDetalhe } from '../pages/usuarios-vendedores/usuarioDetalhe.js';
 import { paginaVendedorDetalhe } from '../pages/usuarios-vendedores/vendedorDetalhe.js';
+import { paginaPedidos } from '../pages/pedidos/pedidos.js';
+import { paginaPedidoDetalhe } from '../pages/pedidos/pedidoDetalhe.js';
+
 export const ROTAS = [
   // 1 — Login do administrador
   { caminho: '/login', titulo: 'Entrar', publica: true, render: paginaLogin },
@@ -97,5 +100,25 @@ export const ROTAS = [
       { rotulo: `Vendedor ${p.id}` },
     ],
     render: paginaVendedorDetalhe,
+  },
+
+  // Pedidos
+  {
+    caminho: '/pedidos',
+    titulo: 'Pedidos',
+    menu: 'pedidos',
+    migalhas: () => [{ rotulo: 'Pedidos' }],
+    render: paginaPedidos,
+  },
+  // Detalhe do pedido
+  {
+    caminho: '/pedidos/:id',
+    titulo: 'Detalhe do pedido',
+    menu: 'pedidos',
+    migalhas: (p) => [
+      { rotulo: 'Pedidos', rota: '#/pedidos' },
+      { rotulo: `Pedido ${p.id}` },
+    ],
+    render: paginaPedidoDetalhe,
   },
 ];
