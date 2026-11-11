@@ -618,6 +618,32 @@
   padding-top: 12px;
 }
 
+.abas {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--cor-borda, #d5e3e6);
+}
+.abas__aba {
+  padding: 8px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: #e0eff2;
+  color: #124f5c;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+.abas__aba[aria-selected='true'] {
+  background: #1f8196;
+  color: #fff;
+}
+.abas__aba:focus-visible {
+  outline: 3px solid #124f5c;
+  outline-offset: 2px;
+}
+
 /* ---------- Pequenos ajustes ---------- */
 .prazo-urgente {
   color: var(--coral-botao);
@@ -629,3 +655,4 @@
 .cartao h2:not(:first-child) {
   margin-top: 16px;
 }
+

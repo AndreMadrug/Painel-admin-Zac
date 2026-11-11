@@ -13,7 +13,9 @@ import { paginaFinanceiro } from '../pages/financeiro/financeiro.js';
 import { paginaFinanceiroDetalhe } from '../pages/financeiro/financeiroDetalhe.js';
 import { paginaDisputas } from '../pages/disputas/disputas.js';
 import { paginaDisputaDetalhe } from '../pages/disputas/disputaDetalhe.js';
-
+import { paginaUsuariosVendedores } from '../pages/usuarios-vendedores/usuariosVendedores.js';
+import { paginaUsuarioDetalhe } from '../pages/usuarios-vendedores/usuarioDetalhe.js';
+import { paginaVendedorDetalhe } from '../pages/usuarios-vendedores/vendedorDetalhe.js';
 export const ROTAS = [
   // 1 — Login do administrador
   { caminho: '/login', titulo: 'Entrar', publica: true, render: paginaLogin },
@@ -65,5 +67,35 @@ export const ROTAS = [
       { rotulo: `Disputa ${p.id}` },
     ],
     render: paginaDisputaDetalhe,
+  },
+    // Usuários e vendedores
+  {
+    caminho: '/usuarios-e-vendedores',
+    titulo: 'Usuários e vendedores',
+    menu: 'usuarios-e-vendedores',
+    migalhas: () => [{ rotulo: 'Usuários e vendedores' }],
+    render: paginaUsuariosVendedores,
+  },
+  // Detalhe do usuário
+  {
+    caminho: '/usuarios-e-vendedores/usuarios/:id',
+    titulo: 'Detalhe do usuário',
+    menu: 'usuarios-e-vendedores',
+    migalhas: (p) => [
+      { rotulo: 'Usuários e vendedores', rota: '#/usuarios-e-vendedores' },
+      { rotulo: `Usuário ${p.id}` },
+    ],
+    render: paginaUsuarioDetalhe,
+  },
+  // Detalhe do vendedor
+  {
+    caminho: '/usuarios-e-vendedores/vendedores/:id',
+    titulo: 'Detalhe do vendedor',
+    menu: 'usuarios-e-vendedores',
+    migalhas: (p) => [
+      { rotulo: 'Usuários e vendedores', rota: '#/usuarios-e-vendedores' },
+      { rotulo: `Vendedor ${p.id}` },
+    ],
+    render: paginaVendedorDetalhe,
   },
 ];
