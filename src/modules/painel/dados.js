@@ -2,6 +2,10 @@
 import { simularRequisicao } from '../../lib/api.js';
 import { inicioDoDia } from '../../lib/format.js';
 import { contarPendentes } from '../disputas/dados.js';
+import { contarDenunciasAbertas } from '../produtos/dados.js';
+import { contarVendedoresAVerificar } from '../usuarios/dados.js';
+import { contarLocaisAAprovar } from '../locais/dados.js';
+import { contarChamadosAbertos } from '../suporte/dados.js';
 
 const USUARIOS_TOTAL = 1284;
 
@@ -45,10 +49,10 @@ export function obterResumo(inicio, fim) {
       // Cada atalho leva direto à tela principal do módulo, sem passar pelo menu.
       pendencias: [
         { rotulo: 'Disputas abertas', quantidade: contarPendentes(), rota: '#/disputas' },
-        { rotulo: 'Denúncias', quantidade: 7, rota: '#/produtos-e-denuncias' },
-        { rotulo: 'Vendedores a verificar', quantidade: 4, rota: '#/usuarios-e-vendedores' },
-        { rotulo: 'Locais a aprovar', quantidade: 5, rota: '#/locais' },
-        { rotulo: 'Chamados abertos', quantidade: 9, rota: '#/impacto-e-suporte' },
+        { rotulo: 'Denúncias', quantidade: contarDenunciasAbertas(), rota: '#/produtos-e-denuncias' },
+        { rotulo: 'Vendedores a verificar', quantidade: contarVendedoresAVerificar(), rota: '#/usuarios-e-vendedores' },
+        { rotulo: 'Locais a aprovar', quantidade: contarLocaisAAprovar(), rota: '#/locais' },
+        { rotulo: 'Chamados abertos', quantidade: contarChamadosAbertos(), rota: '#/impacto-e-suporte' },
       ],
     };
   });

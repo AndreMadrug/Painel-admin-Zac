@@ -1,0 +1,157 @@
+/* Estilos das telas de Locais, Impacto e suporte e Sistema. */
+
+/* ---------- Mapa (Locais) ---------- */
+.mapa {
+  height: 340px;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-pequeno);
+  z-index: 0;
+}
+.tabela tbody th[scope='row'],
+.tabela tfoot th[scope='row'] {
+  background: transparent;
+  color: var(--texto);
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.comparacao__mudou {
+  background: var(--verde-claro);
+  font-weight: 600;
+}
+
+/* ---------- Cartões com título e botão ao lado ---------- */
+.cartao__topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.cartao__topo h2 {
+  margin: 0;
+}
+.cartao + .cartao,
+.grade-cartoes + .cartao {
+  margin-top: 18px;
+}
+.barra-acoes {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+a.btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---------- Barra de progresso da meta ---------- */
+.barra {
+  height: 8px;
+  margin-top: 6px;
+  border-radius: 99px;
+  background: var(--petroleo-claro);
+  overflow: hidden;
+}
+.barra span {
+  display: block;
+  height: 100%;
+  background: var(--verde);
+}
+.tabela tfoot th,
+.tabela tfoot td {
+  padding: 12px 14px;
+  border-top: 2px solid var(--borda-forte);
+  text-align: left;
+}
+.tabela tfoot td.num {
+  text-align: right;
+}
+
+/* ---------- Formulários de página ---------- */
+.formulario {
+  display: grid;
+  gap: 14px;
+  max-width: 640px;
+}
+.divisor {
+  border: 0;
+  border-top: 1px solid var(--borda);
+  margin: 18px 0;
+}
+
+/* ---------- Conversa do chamado ---------- */
+.conversa {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.balao {
+  max-width: 82%;
+  padding: 10px 14px;
+  border-radius: var(--raio);
+  border: 1px solid var(--borda);
+  background: var(--fundo);
+}
+.balao p {
+  margin: 4px 0 0;
+  white-space: pre-wrap;
+}
+.balao--equipe {
+  justify-self: end;
+  background: var(--petroleo-claro);
+  border-color: var(--borda-forte);
+}
+.balao__topo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  align-items: baseline;
+  font-size: 0.85rem;
+}
+.balao__topo span {
+  color: var(--texto-suave);
+}
+
+/* ---------- Configurações ---------- */
+.config {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(220px, 320px);
+  gap: 8px 24px;
+  padding: 14px 0;
+  border-top: 1px solid var(--borda);
+}
+.config__texto {
+  display: grid;
+  gap: 2px;
+  align-content: start;
+}
+.config__texto code {
+  font-size: 0.75rem;
+  background: var(--petroleo-claro);
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+.config__entrada {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+@media (max-width: 720px) {
+  .config {
+    grid-template-columns: 1fr;
+  }
+  .balao {
+    max-width: 100%;
+  }
+}
+
+/* ---------- Auditoria: linhas só para consulta ---------- */
+.auditoria .tabela tbody tr.linha-clicavel {
+  cursor: default;
+}
