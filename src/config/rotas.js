@@ -21,6 +21,12 @@ import { paginaPedidoDetalhe } from '../pages/pedidos/pedidoDetalhe.js';
 import { paginaProdutosDenuncias } from '../pages/produtos-denuncias/produtosDenuncias.js';
 import { paginaProdutoDetalhe } from '../pages/produtos-denuncias/produtoDetalhe.js';
 import { paginaDenunciaDetalhe } from '../pages/produtos-denuncias/denunciaDetalhe.js';
+import { paginaLocais } from '../pages/locais/locais.js';
+import { paginaLocalDetalhe } from '../pages/locais/localDetalhe.js';
+import { paginaImpactoSuporte } from '../pages/impacto-suporte/impactoSuporte.js';
+import { paginaChamadoNovo } from '../pages/impacto-suporte/chamadoNovo.js';
+import { paginaChamadoDetalhe } from '../pages/impacto-suporte/chamadoDetalhe.js';
+import { paginaSistema } from '../pages/sistema/sistema.js';
 
 export const ROTAS = [
   // 1 — Login do administrador
@@ -153,5 +159,64 @@ export const ROTAS = [
       { rotulo: `Denúncia ${p.id}` },
     ],
     render: paginaDenunciaDetalhe,
+  },
+  // 13 — Locais (abas: sugestões, reivindicações, edições)
+  {
+    caminho: '/locais',
+    titulo: 'Locais',
+    menu: 'locais',
+    migalhas: () => [{ rotulo: 'Locais' }],
+    render: paginaLocais,
+  },
+  // 14 — Análise do local
+  {
+    caminho: '/locais/:id',
+    titulo: 'Análise do local',
+    menu: 'locais',
+    migalhas: (p) => [
+      { rotulo: 'Locais', rota: '#/locais' },
+      { rotulo: `Pedido ${p.id}` },
+    ],
+    render: paginaLocalDetalhe,
+  },
+
+  // 17 e 18 — Impacto ISAC e Suporte (abas)
+  {
+    caminho: '/impacto-e-suporte',
+    titulo: 'Impacto e suporte',
+    menu: 'impacto-e-suporte',
+    migalhas: () => [{ rotulo: 'Impacto e suporte' }],
+    render: paginaImpactoSuporte,
+  },
+  // 19 — Novo chamado (precisa vir antes de ":id")
+  {
+    caminho: '/impacto-e-suporte/chamados/novo',
+    titulo: 'Novo chamado',
+    menu: 'impacto-e-suporte',
+    migalhas: () => [
+      { rotulo: 'Impacto e suporte', rota: '#/impacto-e-suporte' },
+      { rotulo: 'Novo chamado' },
+    ],
+    render: paginaChamadoNovo,
+  },
+  // 20 — Detalhe do chamado
+  {
+    caminho: '/impacto-e-suporte/chamados/:id',
+    titulo: 'Detalhe do chamado',
+    menu: 'impacto-e-suporte',
+    migalhas: (p) => [
+      { rotulo: 'Impacto e suporte', rota: '#/impacto-e-suporte' },
+      { rotulo: `Chamado ${p.id}` },
+    ],
+    render: paginaChamadoDetalhe,
+  },
+
+  // 21 — Configurações e auditoria (abas)
+  {
+    caminho: '/sistema',
+    titulo: 'Sistema',
+    menu: 'sistema',
+    migalhas: () => [{ rotulo: 'Sistema' }],
+    render: paginaSistema,
   },
 ];
